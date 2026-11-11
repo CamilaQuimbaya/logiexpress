@@ -31,7 +31,7 @@ ASSETS = ("logo.png", "favicon.png")
 
 REPO = "https://github.com/CamilaQuimbaya/logiexpress"
 BINDER = "https://mybinder.org/v2/gh/CamilaQuimbaya/logiexpress/HEAD"
-APP_URL = f"{BINDER}?urlpath=voila%2Frender%2FLogiExpress.ipynb%3Fvoila-theme%3Ddark"
+APP_URL = f"{BINDER}?urlpath=voila%2Frender%2Fapp.ipynb%3Fvoila-theme%3Ddark"
 NOTEBOOK_URL = f"{BINDER}?labpath=LogiExpress.ipynb"
 
 

@@ -11,11 +11,11 @@ de entrega más eficientes de una red vial (localidades de Bogotá) con **Dijkst
 | | Enlace | Qué es |
 |---|---|---|
 | 🌐 | **[Ver el proyecto](https://camilaquimbaya.github.io/logiexpress/)** | Página estática con explicaciones, resultados y gráficos (abre al instante) |
-| 🚀 | **[Abrir la app interactiva](https://mybinder.org/v2/gh/CamilaQuimbaya/logiexpress/HEAD?urlpath=voila%2Frender%2FLogiExpress.ipynb%3Fvoila-theme%3Ddark)** | La interfaz gráfica sin código (Voilà en Binder) |
+| 🚀 | **[Abrir la app interactiva](https://mybinder.org/v2/gh/CamilaQuimbaya/logiexpress/HEAD?urlpath=voila%2Frender%2Fapp.ipynb%3Fvoila-theme%3Ddark)** | La interfaz gráfica sin código (Voilà en Binder) |
 | 🎬 | **[Ver el video](https://camilaquimbaya.github.io/logiexpress/#video)** | Explicación del código y demostración |
 | 💻 | **[Abrir el notebook](https://mybinder.org/v2/gh/CamilaQuimbaya/logiexpress/HEAD?labpath=LogiExpress.ipynb)** | Jupyter en la nube para ver y ejecutar el código |
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/CamilaQuimbaya/logiexpress/HEAD?urlpath=voila%2Frender%2FLogiExpress.ipynb%3Fvoila-theme%3Ddark)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/CamilaQuimbaya/logiexpress/HEAD?urlpath=voila%2Frender%2Fapp.ipynb%3Fvoila-theme%3Ddark)
 
 > ⏳ Binder es gratuito: la primera vez puede tardar unos minutos en arrancar y la sesión se borra
 > al cerrarla.
@@ -45,7 +45,7 @@ de entrega más eficientes de una red vial (localidades de Bogotá) con **Dijkst
 Cada capa solo depende de las capas internas. Principios aplicados: SRP, abierto/cerrado,
 inversión de dependencias, patrones Strategy y Observer, entidades inmutables y validación en el
 dominio. Todo el código está en un solo archivo, **[`LogiExpress.ipynb`](LogiExpress.ipynb)**, como
-pide el enunciado.
+pide el enunciado. [`app.ipynb`](app.ipynb) solo carga ese código y abre el planificador interactivo.
 
 ## 💻 Ejecutarlo en local
 
@@ -55,7 +55,7 @@ cd logiexpress
 python3 -m venv .venv
 source .venv/bin/activate          # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
-jupyter notebook LogiExpress.ipynb # o, como app sin código: voila LogiExpress.ipynb --theme=dark
+jupyter notebook LogiExpress.ipynb # o la app: voila app.ipynb --theme=dark
 ```
 
 Luego **Run → Run All Cells** y ve a la **sección 8** (GUI) o a la **sección 9** (consola).
