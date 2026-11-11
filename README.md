@@ -12,6 +12,7 @@ de entrega más eficientes de una red vial (localidades de Bogotá) con **Dijkst
 |---|---|---|
 | 🌐 | **[Ver el proyecto](https://camilaquimbaya.github.io/logiexpress/)** | Página estática con explicaciones, resultados y gráficos (abre al instante) |
 | 🚀 | **[Abrir la app interactiva](https://mybinder.org/v2/gh/CamilaQuimbaya/logiexpress/HEAD?urlpath=voila%2Frender%2FLogiExpress.ipynb%3Fvoila-theme%3Ddark)** | La interfaz gráfica sin código (Voilà en Binder) |
+| 🎬 | **[Ver el video](https://camilaquimbaya.github.io/logiexpress/#video)** | Explicación del código y demostración |
 | 💻 | **[Abrir el notebook](https://mybinder.org/v2/gh/CamilaQuimbaya/logiexpress/HEAD?labpath=LogiExpress.ipynb)** | Jupyter en la nube para ver y ejecutar el código |
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/CamilaQuimbaya/logiexpress/HEAD?urlpath=voila%2Frender%2FLogiExpress.ipynb%3Fvoila-theme%3Ddark)
