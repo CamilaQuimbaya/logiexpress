@@ -1,4 +1,8 @@
-# 🚚 LogiExpress — Sistema de Gestión de Rutas de Entrega
+<p align="center">
+  <img src="assets/logo.png" alt="Logo de LogiExpress" width="420">
+</p>
+
+# LogiExpress — Sistema de Gestión de Rutas de Entrega
 
 Proyecto final de **Estructuras de Datos y Algoritmos de Grafos**: un sistema que calcula las rutas
 de entrega más eficientes de una red vial (localidades de Bogotá) con **Dijkstra** y

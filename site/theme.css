@@ -262,8 +262,9 @@ body {
   border-bottom: 1px solid var(--lx-line);
   font-family: 'Inter', system-ui, sans-serif;
 }
-.lx-nav .lx-brand { color: #ffffff; font-weight: 800; font-size: 17px; text-decoration: none; }
-.lx-nav .lx-brand span { color: var(--lx-pink); }
+.lx-nav .lx-brand { display: flex; align-items: center; gap: 10px; color: #ffffff; font-weight: 800; font-size: 17px; text-decoration: none; }
+.lx-nav .lx-brand img { width: 34px; height: 34px; border-radius: 9px; box-shadow: 0 0 16px rgba(155, 93, 229, .55); }
+.lx-nav .lx-brand em { color: var(--lx-pink); font-style: normal; }
 .lx-nav .lx-links { display: flex; gap: 8px; flex-wrap: wrap; }
 .lx-nav .lx-links a {
   color: var(--lx-text);

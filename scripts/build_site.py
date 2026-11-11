@@ -11,6 +11,7 @@ Uso (desde la raíz del repo):
 from __future__ import annotations
 
 import argparse
+import shutil
 from pathlib import Path
 
 import nbformat
@@ -22,18 +23,17 @@ ROOT = Path(__file__).resolve().parent.parent
 NOTEBOOK = ROOT / "LogiExpress.ipynb"
 THEME = ROOT / "site" / "theme.css"
 OUTPUT = ROOT / "docs" / "index.html"
+ASSETS = ("logo.png", "favicon.png")
 
 REPO = "https://github.com/CamilaQuimbaya/logiexpress"
 BINDER = "https://mybinder.org/v2/gh/CamilaQuimbaya/logiexpress/HEAD"
 APP_URL = f"{BINDER}?urlpath=voila%2Frender%2FLogiExpress.ipynb%3Fvoila-theme%3Ddark"
 NOTEBOOK_URL = f"{BINDER}?labpath=LogiExpress.ipynb"
 
-FAVICON = ("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>"
-           "<text y='.9em' font-size='90'>🚚</text></svg>")
 
 NAVBAR = f"""
 <nav class="lx-nav">
-  <a class="lx-brand" href="#">🚚 Logi<span>Express</span></a>
+  <a class="lx-brand" href="#"><img src="assets/favicon.png" alt=""><b>Logi<em>Express</em></b></a>
   <div class="lx-links">
     <a class="primary" href="{APP_URL}" target="_blank" rel="noopener">🚀 App interactiva</a>
     <a href="{NOTEBOOK_URL}" target="_blank" rel="noopener">💻 Notebook</a>
@@ -70,7 +70,7 @@ def export_html(notebook: nbformat.NotebookNode) -> str:
 
 def decorate(html: str) -> str:
     """Inserta el tema, el favicon, la barra superior y el pie."""
-    head = (f'<link rel="icon" href="{FAVICON}">\n'
+    head = ('<link rel="icon" type="image/png" href="assets/favicon.png">\n'
             f'<meta name="description" content="Sistema de gestión de rutas de entrega con Dijkstra y Floyd-Warshall">\n'
             f"<style>\n{THEME.read_text(encoding='utf-8')}\n</style>\n</head>")
     html = html.replace("</head>", head, 1)
@@ -87,6 +87,9 @@ def main() -> None:
 
     OUTPUT.parent.mkdir(exist_ok=True)
     OUTPUT.write_text(decorate(export_html(load_notebook(args.execute))), encoding="utf-8")
+    (OUTPUT.parent / "assets").mkdir(exist_ok=True)
+    for name in ASSETS:  # las imágenes que usa el notebook, junto a la página
+        shutil.copy2(ROOT / "assets" / name, OUTPUT.parent / "assets" / name)
     (OUTPUT.parent / ".nojekyll").touch()
     print(f"✅ Página generada: {OUTPUT.relative_to(ROOT)}")
 
