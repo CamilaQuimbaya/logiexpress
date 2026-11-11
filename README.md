@@ -7,10 +7,10 @@ de entrega más eficientes de una red vial (localidades de Bogotá) con **Dijkst
 | | Enlace | Qué es |
 |---|---|---|
 | 🌐 | **[Ver el proyecto](https://camilaquimbaya.github.io/logiexpress/)** | Página estática con explicaciones, resultados y gráficos (abre al instante) |
-| 🚀 | **[Abrir la app interactiva](https://mybinder.org/v2/gh/CamilaQuimbaya/logiexpress/HEAD?urlpath=voila%2Frender%2FLogiExpress.ipynb)** | La interfaz gráfica sin código (Voilà en Binder) |
+| 🚀 | **[Abrir la app interactiva](https://mybinder.org/v2/gh/CamilaQuimbaya/logiexpress/HEAD?urlpath=voila%2Frender%2FLogiExpress.ipynb%3Fvoila-theme%3Ddark)** | La interfaz gráfica sin código (Voilà en Binder) |
 | 💻 | **[Abrir el notebook](https://mybinder.org/v2/gh/CamilaQuimbaya/logiexpress/HEAD?labpath=LogiExpress.ipynb)** | Jupyter en la nube para ver y ejecutar el código |
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/CamilaQuimbaya/logiexpress/HEAD?urlpath=voila%2Frender%2FLogiExpress.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/CamilaQuimbaya/logiexpress/HEAD?urlpath=voila%2Frender%2FLogiExpress.ipynb%3Fvoila-theme%3Ddark)
 
 > ⏳ Binder es gratuito: la primera vez puede tardar unos minutos en arrancar y la sesión se borra
 > al cerrarla.
@@ -50,11 +50,20 @@ cd logiexpress
 python3 -m venv .venv
 source .venv/bin/activate          # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
-jupyter notebook LogiExpress.ipynb # o, como app sin código: voila LogiExpress.ipynb
+jupyter notebook LogiExpress.ipynb # o, como app sin código: voila LogiExpress.ipynb --theme=dark
 ```
 
 Luego **Run → Run All Cells** y ve a la **sección 8** (GUI) o a la **sección 9** (consola).
 Requiere Python 3.10 o superior.
+
+## 🎨 Página publicada
+
+`docs/index.html` (GitHub Pages) se genera desde el notebook con un tema oscuro propio
+(`site/theme.css`):
+
+```bash
+python scripts/build_site.py --execute   # ejecuta el notebook y regenera la página
+```
 
 ## 🗺️ Cambiar los datos
 

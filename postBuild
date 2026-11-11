@@ -1,0 +1,8 @@
+#!/bin/bash
+# Binder: abre JupyterLab con el tema oscuro por defecto.
+set -eo pipefail
+PREFIX="${NB_PYTHON_PREFIX:-$(python -c 'import sys; print(sys.prefix)')}"
+mkdir -p "$PREFIX/share/jupyter/lab/settings"
+cat > "$PREFIX/share/jupyter/lab/settings/overrides.json" <<'JSON'
+{ "@jupyterlab/apputils-extension:themes": { "theme": "JupyterLab Dark" } }
+JSON

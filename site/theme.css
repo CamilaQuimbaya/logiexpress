@@ -1,0 +1,293 @@
+/* ==========================================================================
+   LogiExpress · tema oscuro neón para la página publicada (nbconvert) y la
+   versión app (Voilà). Fuente única de estilos del sitio.
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+:root {
+  --lx-bg: #0a0717;
+  --lx-panel: #140f29;
+  --lx-panel-2: #1c1538;
+  --lx-line: #2c2356;
+  --lx-text: #ebe7ff;
+  --lx-muted: #a39bcc;
+  --lx-pink: #ff2e93;
+  --lx-cyan: #00e5ff;
+  --lx-yellow: #ffd60a;
+  --lx-violet: #9b5de5;
+  --lx-green: #2ee59d;
+  --lx-orange: #ff9f43;
+
+  /* Variables del tema de Jupyter → paleta del proyecto */
+  --jp-layout-color0: var(--lx-bg);
+  --jp-layout-color1: var(--lx-bg);
+  --jp-layout-color2: var(--lx-panel);
+  --jp-layout-color3: var(--lx-panel-2);
+  --jp-cell-editor-background: #0e0a1f;
+  --jp-cell-editor-border-color: var(--lx-line);
+  --jp-content-font-color0: #ffffff;
+  --jp-content-font-color1: var(--lx-text);
+  --jp-content-font-color2: var(--lx-muted);
+  --jp-ui-font-color1: var(--lx-text);
+  --jp-border-color1: var(--lx-line);
+  --jp-border-color2: var(--lx-line);
+  --jp-rendermime-table-row-background: rgba(255, 255, 255, .02);
+  --jp-rendermime-table-row-hover-background: rgba(255, 46, 147, .08);
+  --jp-content-link-color: var(--lx-cyan);
+
+  /* Colores de sintaxis del código */
+  --jp-mirror-editor-keyword-color: #ff4fa7;
+  --jp-mirror-editor-atom-color: #ffb86c;
+  --jp-mirror-editor-number-color: #ff9f43;
+  --jp-mirror-editor-def-color: #00e5ff;
+  --jp-mirror-editor-variable-color: #ebe7ff;
+  --jp-mirror-editor-variable-2-color: #c9b8ff;
+  --jp-mirror-editor-variable-3-color: #ffd60a;
+  --jp-mirror-editor-punctuation-color: #8f86bd;
+  --jp-mirror-editor-property-color: #7ee8ff;
+  --jp-mirror-editor-operator-color: #ff79c6;
+  --jp-mirror-editor-comment-color: #7a71a6;
+  --jp-mirror-editor-string-color: #2ee59d;
+  --jp-mirror-editor-string-2-color: #ffd60a;
+  --jp-mirror-editor-meta-color: #ff79c6;
+  --jp-mirror-editor-qualifier-color: #ffd60a;
+  --jp-mirror-editor-builtin-color: #c792ea;
+  --jp-mirror-editor-bracket-color: #b7aee0;
+  --jp-mirror-editor-tag-color: #ff4fa7;
+  --jp-mirror-editor-attribute-color: #7ee8ff;
+  --jp-mirror-editor-header-color: #ff4fa7;
+  --jp-mirror-editor-error-color: #ff5c7a;
+}
+
+/* ── Fondo ─────────────────────────────────────────────────────────────── */
+html, body {
+  background-color: var(--lx-bg) !important;
+}
+body {
+  color: var(--lx-text);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+  background-image:
+    radial-gradient(900px 600px at 8% -5%, rgba(255, 46, 147, .20), transparent 60%),
+    radial-gradient(800px 600px at 95% 15%, rgba(0, 229, 255, .12), transparent 60%),
+    radial-gradient(900px 700px at 50% 110%, rgba(155, 93, 229, .20), transparent 60%),
+    linear-gradient(rgba(255, 255, 255, .028) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, .028) 1px, transparent 1px) !important;
+  background-size: auto, auto, auto, 44px 44px, 44px 44px !important;
+  background-attachment: fixed !important;
+}
+::selection { background: rgba(255, 46, 147, .35); }
+::-webkit-scrollbar { width: 11px; height: 11px; }
+::-webkit-scrollbar-track { background: var(--lx-bg); }
+::-webkit-scrollbar-thumb { background: linear-gradient(var(--lx-pink), var(--lx-violet)); border-radius: 10px; border: 2px solid var(--lx-bg); }
+
+/* ── Contenedor ────────────────────────────────────────────────────────── */
+.jp-Notebook, body > main {
+  background: transparent !important;
+  max-width: 1180px;
+  margin: 0 auto !important;
+  padding: 28px 24px 90px !important;
+}
+.jp-Cell, .jp-Cell-inputWrapper, .jp-Cell-outputWrapper, .jp-OutputArea, .jp-OutputArea-child {
+  background: transparent !important;
+}
+.jp-InputPrompt, .jp-OutputPrompt { display: none !important; }
+.jp-Cell { padding: 6px 0 !important; }
+
+/* ── Texto (markdown) ──────────────────────────────────────────────────── */
+.jp-RenderedHTMLCommon {
+  color: var(--lx-text);
+  font-family: 'Inter', system-ui, sans-serif !important;
+  font-size: 15px;
+  line-height: 1.7;
+}
+.jp-RenderedMarkdown h1, .jp-RenderedMarkdown h2, .jp-RenderedMarkdown h3, .jp-RenderedMarkdown h4 {
+  color: #ffffff;
+  font-weight: 800;
+  letter-spacing: -.01em;
+}
+.jp-RenderedMarkdown h2 {
+  margin-top: 2.4em !important;
+  padding: 14px 18px;
+  border-radius: 14px;
+  background: linear-gradient(90deg, rgba(255, 46, 147, .16), rgba(155, 93, 229, .10) 45%, transparent);
+  border-left: 4px solid var(--lx-pink);
+}
+.jp-RenderedMarkdown h3 { color: #d9ccff; margin-top: 1.8em !important; }
+.jp-RenderedMarkdown strong { color: #ffffff; }
+.jp-RenderedMarkdown em { color: #ffd1ea; }
+.jp-RenderedHTMLCommon a { color: var(--lx-cyan); text-decoration: none; border-bottom: 1px dashed rgba(0, 229, 255, .5); }
+.jp-RenderedHTMLCommon hr { border-top: 1px solid var(--lx-line); }
+
+/* Código en línea y bloques de pseudocódigo */
+.jp-RenderedMarkdown code {
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: .86em;
+  color: #ff9ad0;
+  background: rgba(255, 46, 147, .12) !important;
+  padding: .12em .45em;
+  border-radius: 6px;
+}
+.jp-RenderedMarkdown pre {
+  background: #0e0a1f !important;
+  border: 1px solid var(--lx-line);
+  border-left: 3px solid var(--lx-cyan);
+  border-radius: 12px;
+  padding: 16px 18px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .35);
+}
+.jp-RenderedMarkdown pre code {
+  background: transparent !important;
+  color: #c9f7ff;
+  padding: 0;
+}
+
+/* Citas → tarjetas de aviso */
+.jp-RenderedMarkdown blockquote {
+  margin: 14px 0;
+  padding: 12px 18px;
+  border-left: 4px solid var(--lx-yellow) !important;
+  border-radius: 0 12px 12px 0;
+  background: rgba(255, 214, 10, .07);
+  color: var(--lx-text);
+}
+.jp-RenderedMarkdown blockquote p { margin: 4px 0; }
+
+/* Tablas del texto (no las tarjetas del proyecto, que tienen su propio estilo) */
+.jp-RenderedMarkdown table {
+  border-collapse: separate !important;
+  border-spacing: 0;
+  border: 1px solid var(--lx-line);
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(20, 15, 41, .85);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .3);
+  margin: 14px auto;
+}
+.jp-RenderedMarkdown th {
+  background: var(--lx-panel-2) !important;
+  color: var(--lx-cyan) !important;
+  font-size: 12px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  padding: 10px 14px !important;
+  border: none !important;
+  text-align: left !important;
+}
+.jp-RenderedMarkdown td {
+  padding: 9px 14px !important;
+  border: none !important;
+  border-top: 1px solid var(--lx-line) !important;
+  color: var(--lx-text);
+  text-align: left !important;
+}
+.jp-RenderedMarkdown tbody tr:nth-child(odd) { background: rgba(255, 255, 255, .02) !important; }
+.jp-RenderedMarkdown tbody tr:hover { background: rgba(255, 46, 147, .07) !important; }
+
+/* ── Celdas de código: ventana de editor ───────────────────────────────── */
+.jp-CodeCell .jp-InputArea-editor {
+  background: #0e0a1f !important;
+  border: 1px solid var(--lx-line) !important;
+  border-radius: 14px !important;
+  overflow: hidden;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, .45), 0 0 0 1px rgba(255, 46, 147, .04);
+}
+.jp-CodeCell .jp-InputArea-editor::before {
+  content: "python";
+  display: flex;
+  align-items: center;
+  height: 30px;
+  padding-left: 76px;
+  font: 600 11px 'JetBrains Mono', monospace;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--lx-muted);
+  border-bottom: 1px solid var(--lx-line);
+  background:
+    radial-gradient(circle at 18px 15px, #ff5f57 5px, transparent 6px),
+    radial-gradient(circle at 36px 15px, #febc2e 5px, transparent 6px),
+    radial-gradient(circle at 54px 15px, #28c840 5px, transparent 6px),
+    #171131;
+}
+.jp-CodeCell .highlight, .jp-CodeCell .highlight pre {
+  background: transparent !important;
+}
+.jp-CodeCell .highlight pre {
+  margin: 0;
+  padding: 14px 20px !important;
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 13px !important;
+  line-height: 1.65 !important;
+  color: #e6e1ff;
+  overflow-x: auto;
+}
+.highlight .c, .highlight .c1, .highlight .cm { font-style: italic; }
+.highlight .sd { color: #8fd9b6 !important; font-style: italic; }
+.highlight .nc { color: var(--lx-yellow) !important; font-weight: 700; }
+.highlight .nf, .highlight .fm { color: var(--lx-cyan) !important; }
+.highlight .nd { color: #ff79c6 !important; }
+.highlight .kc, .highlight .bp { color: #ffb86c !important; }
+.highlight .k, .highlight .kn, .highlight .ow { font-weight: 600; }
+
+/* ── Salidas ───────────────────────────────────────────────────────────── */
+.jp-OutputArea-output img {
+  border-radius: 16px;
+  box-shadow: 0 14px 44px rgba(0, 0, 0, .5), 0 0 34px rgba(255, 46, 147, .10);
+}
+.jp-OutputArea-output pre {
+  color: var(--lx-text);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12.5px;
+}
+.jp-OutputArea-output[data-mime-type="application/vnd.jupyter.stdout"] {
+  background: #0e0a1f;
+  border: 1px solid var(--lx-line);
+  border-radius: 12px;
+  padding: 10px 14px;
+}
+
+/* ── Barra superior y pie (solo en la página publicada) ────────────────── */
+.lx-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 12px 28px;
+  background: rgba(10, 7, 23, .72);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--lx-line);
+  font-family: 'Inter', system-ui, sans-serif;
+}
+.lx-nav .lx-brand { color: #ffffff; font-weight: 800; font-size: 17px; text-decoration: none; }
+.lx-nav .lx-brand span { color: var(--lx-pink); }
+.lx-nav .lx-links { display: flex; gap: 8px; flex-wrap: wrap; }
+.lx-nav .lx-links a {
+  color: var(--lx-text);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 7px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--lx-line);
+  background: rgba(255, 255, 255, .03);
+  transition: all .15s ease;
+}
+.lx-nav .lx-links a:hover { border-color: var(--lx-pink); box-shadow: 0 0 18px rgba(255, 46, 147, .35); }
+.lx-nav .lx-links a.primary { background: var(--lx-pink); border-color: var(--lx-pink); color: #ffffff; }
+.lx-footer {
+  text-align: center;
+  color: var(--lx-muted);
+  font: 13px 'Inter', system-ui, sans-serif;
+  padding: 30px 16px 40px;
+  border-top: 1px solid var(--lx-line);
+}
+.lx-footer a { color: var(--lx-cyan); text-decoration: none; }
+
+@media (max-width: 700px) {
+  .jp-Notebook, body > main { padding: 16px 12px 60px !important; }
+  .lx-nav { padding: 10px 14px; }
+}
