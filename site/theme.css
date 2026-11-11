@@ -245,6 +245,22 @@ body {
   padding: 10px 14px;
 }
 
+/* ── Pestañas de la GUI (app): títulos legibles sobre fondo oscuro ───── */
+.widget-tab > .lm-TabBar .lm-TabBar-tab, .widget-tab > .p-TabBar .p-TabBar-tab {
+  color: var(--lx-muted) !important;
+  background: var(--lx-panel) !important;
+  border-color: var(--lx-line) !important;
+  opacity: 1 !important;
+}
+.widget-tab > .lm-TabBar .lm-TabBar-tab:hover, .widget-tab > .p-TabBar .p-TabBar-tab:hover {
+  color: var(--lx-text) !important;
+}
+.widget-tab > .lm-TabBar .lm-TabBar-tab.lm-mod-current, .widget-tab > .p-TabBar .p-TabBar-tab.p-mod-current {
+  color: #ffffff !important;
+  background: var(--lx-panel-2) !important;
+  border-top: 2px solid var(--lx-pink) !important;
+}
+
 /* ── Barra superior y pie (solo en la página publicada) ────────────────── */
 .lx-nav {
   position: sticky;
